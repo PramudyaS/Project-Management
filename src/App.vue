@@ -1,17 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app> 
+    <Navbar/> 
+      <div class="container-fluid">
+        <div class="columns">
+          <div class="column is-one-quarter">
+            <Sidebar icon="expanded"/>
+          </div>
+          <div class="column content">
+            <router-view/>
+          </div>
+        </div>
+      </div>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Navbar from '@/components/master/Navbar';
+import Sidebar from '@/components/master/Sidebar';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navbar,
+    Sidebar,
   }
 }
 </script>
@@ -24,5 +35,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.content{
+  background-color:#f1f3f4;
+  margin-top:20
+}
+.row-content{
+  background-color:white;
 }
 </style>
